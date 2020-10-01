@@ -2,7 +2,15 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-import { PageLanding, LogoContainer, Background } from './style';
+import {
+  PageLanding,
+  LogoContainer,
+  Background,
+  ButtonContainer,
+  TotalConnections,
+  PageLandingContent,
+  Container,
+} from './style';
 
 import logoImg from '../../assets/images/logo.svg';
 import landingImg from '../../assets/images/landing.svg';
@@ -13,33 +21,37 @@ import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg';
 const Landing: React.FC = () => {
   return (
     <PageLanding>
-      <div id="page-land-content" className="container">
-        <LogoContainer className="logo-container">
-          <img src={logoImg} alt="logoProffy" />
-          <h2>Sua plataforma de estudos online.</h2>
-        </LogoContainer>
+      <PageLandingContent id="page-landing-content" className="container">
+        <Container>
+          <LogoContainer className="logo-container">
+            <img src={logoImg} alt="logoProffy" />
+            <h2>Sua plataforma de estudos online.</h2>
+          </LogoContainer>
 
-        {/* <img src={landingImg} alt="landingImg" className="hero-image" /> */}
-        <Background>
-          <img src={landingImg} alt="landingImg" className="hero-image" />
-        </Background>
-        <div className="buttons-container">
-          <a href="test.com" className="study">
-            <img src={studyIcon} alt="Estudar" />
-            Estudar
-          </a>
+          <Background>
+            <img src={landingImg} alt="landingImg" className="hero-image" />
+          </Background>
 
-          <a href="test" className="give-classes">
-            <img src={giveClassesIcon} alt="Estudar" />
-            Estudar
-          </a>
-        </div>
+          <ButtonContainer className="buttons-container">
+            <a href="test.com" className="study">
+              <img src={studyIcon} alt="Estudar" />
+              Estudar
+            </a>
 
-        <span className="total-connections">
-          static value temporary
-          <img src={purpleHeartIcon} alt="coração roxo" />
-        </span>
-      </div>
+            <a href="test" className="giveClasses">
+              <img src={giveClassesIcon} alt="Estudar" />
+              Estudar
+            </a>
+          </ButtonContainer>
+
+          <TotalConnections>
+            <span className="total-connections">
+              static value temporary
+              <img src={purpleHeartIcon} alt="coração roxo" />
+            </span>
+          </TotalConnections>
+        </Container>
+      </PageLandingContent>
     </PageLanding>
   );
 };
